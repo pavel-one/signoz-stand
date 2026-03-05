@@ -1,3 +1,5 @@
+[🇬🇧 English](README.en.md) | **🇷🇺 Русский**
+
 # signoz-stand
 
 Стенд для развёртывания [SigNoz](https://signoz.io/) — платформы observability (трейсы, метрики, логи) с хранилищем на ClickHouse.
@@ -119,6 +121,7 @@ make help                # Показать все доступные коман
 signoz-stand/
 ├── Makefile                          # Команды управления стендом
 ├── README.md
+├── README.en.md                      # Documentation (English)
 ├── dashboards/
 │   ├── ClickHouse Metrics.json       # Дашборд метрик ClickHouse
 │   └── ZooKeeper Metrics.json        # Дашборд метрик ZooKeeper
