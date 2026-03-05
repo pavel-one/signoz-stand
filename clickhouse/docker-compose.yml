@@ -28,6 +28,7 @@ services:
     image: signoz/zookeeper:3.7.1
     restart: unless-stopped
     user: root
+    container_name: signoz-zookeeper-1
     networks:
       - clickhouse-network
     labels:
@@ -59,6 +60,7 @@ services:
   clickhouse:
     image: clickhouse/clickhouse-server:25.5.6
     restart: unless-stopped
+    container_name: clickhouse
     networks:
       - clickhouse-network
     ports:
@@ -107,6 +109,7 @@ services:
   signoz-telemetrystore-migrator:
     image: signoz/signoz-otel-collector:${OTELCOL_TAG:-v0.144.1}
     restart: on-failure
+    container_name: signoz-telemetrystore-migrator
     networks:
       - clickhouse-network
     environment:
@@ -136,6 +139,6 @@ networks:
 
 volumes:
   clickhouse:
-    name: stand-signoz-clickhouse
+    name: clickhouse
   zookeeper-1:
     name: stand-signoz-zookeeper-1
